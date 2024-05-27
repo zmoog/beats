@@ -58,7 +58,22 @@ updates:
           - "github.com/Azure/azure-event-hubs-go/*"
           - "github.com/Azure/go-autorest/*"
           - "github.com/Azure/azure-storage-blob-go/*"
-      aws-sdks:
+
+  - package-ecosystem: "gomod"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    labels:
+      - automation
+      - dependabot
+      # The `aws` label enables optional 
+      # stages in the CI for AWS cloud testing.
+      - aws
+    reviewers:
+      - "elastic/obs-ds-hosted-services"
+      - "elastic/obs-infraobs-integrations"
+    groups:
+      aws-sdk:
         patterns:
           - "github.com/aws/aws-sdk-go-v2/*"
 
