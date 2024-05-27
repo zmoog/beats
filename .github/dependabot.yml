@@ -59,6 +59,9 @@ updates:
           - "github.com/Azure/go-autorest/*"
           - "github.com/Azure/azure-storage-blob-go/*"
 
+  # Adding a separate group for AWS SDK dependencies
+  # to enable optional stages in the CI for AWS cloud
+  # testing using the `aws` label.
   - package-ecosystem: "gomod"
     directory: "/"
     schedule:
